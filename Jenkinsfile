@@ -25,7 +25,7 @@ agent any
         sh 'echo Build and Tag'
           }
     }
-}
+
     stage('Post-to-dockerhub') {
      steps {
         sh 'echo post to dockerhub repo'
@@ -37,3 +37,17 @@ agent any
         sh 'echo scan image for security'
      }
     }
+
+    stage('Pull-image-server') {
+      steps {
+         sh 'echo pulling image ...'
+       }
+      }
+    
+    stage('DAST') {
+      steps  {
+         sh 'echo dast scan for security'
+        }
+    }
+ }
+}
