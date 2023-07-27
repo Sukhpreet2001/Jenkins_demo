@@ -25,7 +25,7 @@ agent any
         sh 'echo Build and Tag'
           }
     }
-
+}
     stage('Post-to-dockerhub') {
      steps {
         sh 'echo post to dockerhub repo'
